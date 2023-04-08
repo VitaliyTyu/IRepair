@@ -1,0 +1,18 @@
+﻿@page
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@model BD9.Pages.Emploees.IndexModel
+@*@Styles.Render("~/Content/css")*@
+<link rel="stylesheet" href="~/css/StyleSheet.css" type="text/css" />
+<h2>Список Работников</h2>
+<table>
+    <tr><th>Контактные данные</th><th>Номер офиса</th><th>Должность</th></tr>
+    @foreach (var user in Model.Emps)
+    {
+            <tr>
+                <td>@user.ContactInform</td>
+                <td>@user.OfficeId</td>
+                <td>@user.JobId</td>
+            </tr>
+    }
+</table>

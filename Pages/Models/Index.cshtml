@@ -1,0 +1,26 @@
+﻿@page 
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+ 
+@model BD9.Pages.Models.IndexModel
+@*@Styles.Render("~/Content/css")*@
+<link rel="stylesheet" href="~/css/StyleSheet.css" type="text/css" />
+<h2>Список Моделей</h2>
+<p><a asp-page ="Create">Добавить модель</a></p>
+<table>
+    <tr><th>Производитель</th><th>Название модели</th></tr>
+    @foreach (var user in Model.Models)
+    {
+        <tr>
+            <td>@user.Manufacture</td>
+            <td>@user.ModelName</td>
+             <td>
+                <form method="post">
+                    <a asp-page="Edit" asp-route-id="@user.Id">Изменить</a>
+                    <button type="submit" asp-page-handler="delete" asp-route-id="@user.Id">
+                        Удалить
+                    </button>
+                </form>
+            </td>
+        </tr>
+    }
+</table>

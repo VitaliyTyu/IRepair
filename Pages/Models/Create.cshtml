@@ -1,0 +1,17 @@
+﻿@page
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model BD9.Pages.Models.CreateModel
+@*@Styles.Render("~/Content/css")*@
+<link rel="stylesheet" href="~/css/StyleSheet.css" type="text/css" />
+ <h2>Добавление нового устройства</h2>
+<form method="post">
+    <p>
+        <label asp-for="Mod.Manufacture">Производитель</label><br />
+        <input asp-for="Mod.Manufacture" />
+    </p>
+    <p>
+        <label asp-for="Mod.ModelName">Название модели</label><br />
+        <input asp-for="Mod.ModelName" />
+    </p>
+    <input type="submit" value="Отправить" />
+</form>  
